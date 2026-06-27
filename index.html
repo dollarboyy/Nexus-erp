@@ -2204,7 +2204,10 @@ serve(<span style="color:var(--purple)">async</span> (req) => {<br>
   // ══════════════════════════════════════════
   // AI ASSISTANT — Claude API
   // ══════════════════════════════════════════
-  const ERP_CONTEXT = `You are NEXUS AI, an intelligent ERP co-pilot embedded in the NEXUS ERP system.
+ const SUPABASE_URL = 'https://eethpxzxjghwflfvdgmk.supabase.co/rest/v1/'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVldGhweHp4amdod2ZsZnZkZ21rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1NjE0MDUsImV4cCI6MjA5ODEzNzQwNX0.Sld9RmXCM8r73XR4AjCel1RAILI7m1F91GXvZosT1N8'
+  
+const ERP_CONTEXT = `You are NEXUS AI, an intelligent ERP co-pilot embedded in the NEXUS ERP system.
 You have full visibility into the following live data:
 - Revenue this month: $284,500 (target $240,000 — exceeded by 18.4%)
 - Top sales reps: James Mwangi ($62,400), Amina Hassan ($54,100), Brian Ochieng ($48,200)
