@@ -25,6 +25,10 @@
     --cyan: #06b6d4;
     --sidebar-w: 240px;
     --topbar-h: 60px;
+    --glass-bg: rgba(30, 38, 51, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-blur: blur(16px);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   }
 
   /* ── LIGHT MODE ── */
@@ -43,6 +47,19 @@
     --red-bg: rgba(239,68,68,0.08);
     --yellow-bg: rgba(245,158,11,0.08);
     --purple-bg: rgba(139,92,246,0.08);
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(15, 23, 42, 0.08);
+    --glass-shadow: 0 8px 32px rgba(15, 23, 42, 0.10);
+  }
+  }
+
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow);
   }
 
   /* ── LOGIN PAGE ── */
@@ -54,9 +71,12 @@
   }
   .login-screen.hidden { display: none; }
   .login-box {
-    background: var(--bg2); border: 1px solid var(--border2);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: 20px; padding: 40px 36px; width: min(420px,95vw);
-    box-shadow: 0 30px 80px rgba(0,0,0,.4);
+    box-shadow: var(--glass-shadow), 0 30px 80px rgba(0,0,0,.4);
     animation: fadeIn .3s;
   }
   .login-logo { text-align: center; margin-bottom: 28px; }
@@ -127,9 +147,13 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   
-  body {
+   body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 20%, var(--accent-glow) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, var(--purple-bg) 0%, transparent 40%);
+    background-attachment: fixed;
     color: var(--text);
     min-height: 100vh;
     overflow-x: hidden;
@@ -141,8 +165,10 @@
   /* ── SIDEBAR ── */
   .sidebar {
     width: var(--sidebar-w);
-    background: var(--bg2);
-    border-right: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-right: 1px solid var(--glass-border);
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -220,8 +246,10 @@
   /* ── TOPBAR ── */
   .main { margin-left: var(--sidebar-w); flex: 1; display: flex; flex-direction: column; }
   .topbar {
-    height: var(--topbar-h); background: var(--bg2);
-    border-bottom: 1px solid var(--border);
+    height: var(--topbar-h); background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
     display: flex; align-items: center; gap: 16px;
     padding: 0 24px; position: sticky; top: 0; z-index: 50;
   }
@@ -266,8 +294,12 @@
   .grid-auto { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px; }
 
   .card {
-    background: var(--bg2); border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: 12px; padding: 20px;
+    box-shadow: var(--glass-shadow);
   }
   .card-title {
     font-size: 12px; font-weight: 600; letter-spacing: .6px;
